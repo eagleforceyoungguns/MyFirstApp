@@ -27,7 +27,7 @@ public class EditPatient extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_edit);
-	    save=(Button) findViewById(R.id.Save);
+	    save=(Button) findViewById(R.id.Login);
 	    edtName = (EditText) findViewById(R.id.editText1);
 	    edtSex = (EditText) findViewById(R.id.editText2);
 	    edtDOB = (EditText) findViewById(R.id.editText3);
