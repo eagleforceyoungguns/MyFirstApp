@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="20dp"
-        android:text="Welcome to notesRx would you like to:"
+        android:text="Hello Doctor would you like to:"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="20dp"
         android:textStyle="bold"
