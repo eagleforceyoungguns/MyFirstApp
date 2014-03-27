@@ -2,7 +2,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" 
-    android:theme="@android:style/Theme.Holo.Light">
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -75,8 +75,9 @@
             android:id="@+id/Login"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView1"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="138dp"
             android:text="Login"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -85,12 +86,10 @@
             android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignTop="@+id/editText1"
-            android:paddingTop="100dp"
-            android:src="@raw/efh_logo_black" />
-
-        
+            android:layout_alignRight="@+id/editText1"
+            android:layout_below="@+id/editText1"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/efh_logo_no_bg" />
 
     </RelativeLayout>
 
