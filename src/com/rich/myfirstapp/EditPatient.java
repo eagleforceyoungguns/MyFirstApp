@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 
 
+
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -85,10 +87,10 @@ public class EditPatient extends Activity {
 			mSpeechRecognizer.startListening(mSpeechIntent);
 			super.onStart();
 		}
-		private String getResponse(int command){
+		private void getResponse(int command){
 			switch (command){
 			case 0:
-				speak1();
+				speak1(null);
 				break;
 			case 1:
 				break;
@@ -104,6 +106,38 @@ public class EditPatient extends Activity {
 			default:
 				break;
 			}
+			
+		}
+		@Override
+		protected void onPause() {
+			//kill the voice recognizer
+			if(mSpeechRecognizer != null){
+				mSpeechRecognizer.destroy();
+				mSpeechRecognizer = null;
+
+			}
+			this.mWakeLock.release();
+			super.onPause();
+		}
+		
+		private void processCommand(ArrayList<String> matchStrings){
+			String response = "I'm sorry, Dave. I'm afraid I can't do that.";
+			int maxStrings = matchStrings.size();
+			boolean resultFound = false;
+			for(int i =0; i < VALID_COMMANDS_SIZE && !resultFound;i++){
+				for(int j=0; j < maxStrings && !resultFound; j++){
+					if(StringUtils.getLevenshteinDistance(matchStrings.get(j), VALID_COMMANDS[i]) <(VALID_COMMANDS[i].length() / 3) ){
+						response = getResponse(i);
+					}
+				}
+			}
+			final String finalResponse = response;
+			mHandler.post(new Runnable() {
+				public void run() {
+					responseText.setText(finalResponse);
+				}
+			});
+
 		}
 		
 		*/
