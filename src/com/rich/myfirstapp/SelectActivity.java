@@ -22,7 +22,7 @@ public class SelectActivity extends Activity{
         attrs.flags |= WindowManager.LayoutParams.FLAG_FULLSCREEN;
         getWindow().setAttributes(attrs);
         
-        Button button1 = (Button) findViewById(R.id.Login);
+        Button button1 = (Button) findViewById(R.id.Add);
         Button button2 = (Button) findViewById(R.id.Load);
         button1.setOnClickListener(new OnClickListener(){
         	

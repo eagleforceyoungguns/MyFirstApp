@@ -2,12 +2,19 @@ package com.rich.myfirstapp;
 
 import java.util.ArrayList;
 
+
+
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.PowerManager;
 import android.speech.RecognizerIntent;
+import android.speech.SpeechRecognizer;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -18,17 +25,95 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class EditPatient extends Activity {
-	Button save;
+	Button save, rx;
 	EditText edtName, edtSex, edtDOB, edtAge, edtAddr, edtCity, edtState, edtZip;
 	
 	DBAdapter db = new DBAdapter(this);
 	/** Called when the activity is first created. */
+	
+	/*
+	//wakelock to keep screen on
+		protected PowerManager.WakeLock mWakeLock;
+
+		//speach recognizer for callbacks
+		private SpeechRecognizer mSpeechRecognizer;
+
+		//handler to post changes to progress bar
+		private Handler mHandler = new Handler();
+		
+		//intent for speech recogniztion
+		Intent mSpeechIntent;
+		
+		//this bool will record that it's time to kill P.A.L.
+		boolean killCommanded = false;
+
+		//legel commands
+		private static final String[] VALID_COMMANDS = {
+			"patient name",
+			"height",
+			"weight",
+			"blood pressure",
+			"reason for visit",
+			"exit"
+		};
+		
+		private static final int VALID_COMMANDS_SIZE = VALID_COMMANDS.length;
+		
+		protected void onStart() {
+			mSpeechRecognizer = SpeechRecognizer.createSpeechRecognizer(EditPatient.this);
+			SpeechListener mRecognitionListener = new SpeechListener();
+			mSpeechRecognizer.setRecognitionListener(mRecognitionListener);
+			mSpeechIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+
+			mSpeechIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,"com.androiddev101.ep8");
+
+			// Given an hint to the recognizer about what the user is going to say
+			mSpeechIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+					RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+
+			// Specify how many results you want to receive. The results will be sorted
+			// where the first result is the one with higher confidence.
+			mSpeechIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 20);
+
+
+			mSpeechIntent.putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true);
+
+			//aqcuire the wakelock to keep the screen on until user exits/closes app
+			final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+			
+			this.mWakeLock.acquire();
+			mSpeechRecognizer.startListening(mSpeechIntent);
+			super.onStart();
+		}
+		private String getResponse(int command){
+			switch (command){
+			case 0:
+				speak1();
+				break;
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				killCommanded = true;
+				break;
+			default:
+				break;
+			}
+		}
+		
+		*/
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_edit);
-	    save=(Button) findViewById(R.id.Login);
-	    edtName = (EditText) findViewById(R.id.editText1);
+	    save=(Button) findViewById(R.id.Save);
+	    rx=(Button) findViewById(R.id.Prescription);
+	    edtName = (EditText) findViewById(R.id.drug);
 	    edtSex = (EditText) findViewById(R.id.editText2);
 	    edtDOB = (EditText) findViewById(R.id.editText3);
 	    edtAge = (EditText) findViewById(R.id.editText4);
@@ -51,6 +136,12 @@ public class EditPatient extends Activity {
         		
         		db.close();
         		Toast.makeText(EditPatient.this, "Patient Added", Toast.LENGTH_LONG).show();
+        	}
+        });
+        rx.setOnClickListener(new OnClickListener(){
+        	public void onClick(View v){
+        		Intent intent = new Intent(v.getContext(), RxActivity.class);
+        		startActivityForResult(intent, 0);
         	}
         });
 	}
@@ -150,7 +241,7 @@ public class EditPatient extends Activity {
             	switch (requestCode){
             	case(11):{
             		ArrayList<String> thingsYouSaid = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-            		((EditText)findViewById(R.id.editText1)).setText(thingsYouSaid.get(0));
+            		((EditText)findViewById(R.id.drug)).setText(thingsYouSaid.get(0));
             		String name = edtName.getText().toString();
             	}break;
             	case(12):{

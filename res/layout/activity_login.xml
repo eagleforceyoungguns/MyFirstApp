@@ -13,15 +13,15 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView1"
-            android:layout_below="@+id/textView1"
+            android:layout_alignLeft="@+id/addRX"
+            android:layout_below="@+id/addRX"
             android:paddingTop="20dp"
             android:text="Username:"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textSize="24dp" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/addRX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -40,14 +40,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView2"
-            android:layout_alignRight="@+id/textView1"
+            android:layout_alignRight="@+id/addRX"
             android:layout_below="@+id/textView2"
             android:layout_marginTop="16dp"
             android:ems="10"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/drug"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView3"
@@ -86,8 +86,8 @@
             android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/editText1"
-            android:layout_below="@+id/editText1"
+            android:layout_alignRight="@+id/drug"
+            android:layout_below="@+id/drug"
             android:layout_marginTop="100dp"
             android:src="@drawable/efh_logo_no_bg" />
 

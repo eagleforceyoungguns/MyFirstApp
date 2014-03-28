@@ -22,13 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EditPatient">
-            
+        <activity android:name="com.rich.myfirstapp.EditPatient" >
         </activity>
-        <activity android:name=".Activity2"></activity>
-        <activity android:name=".LoadPatient"></activity>
-        <activity android:name=".SelectActivity"></activity>
-        
+        <activity android:name="com.rich.myfirstapp.Activity2" >
+        </activity>
+        <activity android:name="com.rich.myfirstapp.LoadPatient" >
+        </activity>
+        <activity android:name="com.rich.myfirstapp.SelectActivity" >
+        </activity>
+        <activity
+            android:name="com.rich.myfirstapp.RxActivity"
+            android:label="@string/title_activity_rx" >
+        </activity>
     </application>
 
 </manifest>
