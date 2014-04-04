@@ -45,11 +45,11 @@
                 android:id="@+id/addRX"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Patient Name:"
+                android:text="First Name:"
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/txtFirstName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.90"
@@ -63,11 +63,11 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ID:"
+                android:text="Last Name:"
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/drug"
+                android:id="@+id/txtLastName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -102,11 +102,11 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/txtHeight"
             android:layout_width="94dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="date"
+            android:inputType="number"
             android:onClick="speak3" />
 
         <TextView
@@ -117,7 +117,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/txtWeight"
             android:layout_width="62dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.05"
@@ -133,11 +133,12 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/txtBP"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.08"
             android:ems="10"
+            android:inputType="number"
             android:onClick="speak6" />
 
         <TextView
@@ -148,11 +149,12 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/txtTemp"
             android:layout_width="42dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.08"
             android:ems="10"
+            android:inputType="number"
             android:onClick="speak7" />
 
         <TextView
@@ -163,7 +165,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText8"
+            android:id="@+id/txtPulse"
             android:layout_width="41dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.12"
@@ -191,12 +193,12 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/txtReasonVisit"
             android:layout_width="wrap_content"
             android:layout_height="170dp"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPostalAddress"
+            android:inputType="textShortMessage"
             android:onClick="speak5" />
     </LinearLayout>
 
@@ -213,11 +215,12 @@
         android:layout_height="wrap_content" >
 
         <EditText
-            android:id="@+id/editText10"
+            android:id="@+id/txtDocAsses"
             android:layout_width="wrap_content"
             android:layout_height="151dp"
             android:layout_weight="1"
-            android:ems="10" />
+            android:ems="10"
+            android:inputType="textShortMessage" />
 
     </LinearLayout>
 

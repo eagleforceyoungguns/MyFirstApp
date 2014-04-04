@@ -17,23 +17,26 @@ public class SelectActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
       
-   
+   //Sets the application to run full screen
         WindowManager.LayoutParams attrs = getWindow().getAttributes();
         attrs.flags |= WindowManager.LayoutParams.FLAG_FULLSCREEN;
         getWindow().setAttributes(attrs);
         
-        Button button1 = (Button) findViewById(R.id.Add);
-        Button button2 = (Button) findViewById(R.id.Load);
-        button1.setOnClickListener(new OnClickListener(){
-        	
+   //Initializes the buttons as variables
+        Button btnAdd = (Button) findViewById(R.id.Add);
+        Button btnLoad = (Button) findViewById(R.id.Load);
+        btnAdd.setOnClickListener(new OnClickListener(){
+   
+  //Creates click activity for the Add Patient button. It opens the EditPatient class
         public void onClick(View v){
         	Intent intent = new Intent (v.getContext(), EditPatient.class);
         		startActivityForResult(intent, 0);
         }
         });
-        button2.setOnClickListener(new OnClickListener(){
+  //Creates click activity for the Load PAtient button. It opens the PatientListActivity class
+        btnLoad.setOnClickListener(new OnClickListener(){
         	public void onClick(View v){
-        		Intent intent = new Intent (v.getContext(), LoadPatient.class);
+        		Intent intent = new Intent (v.getContext(), PatientListActivity.class);
         		startActivityForResult(intent, 0);
         	}
         });

@@ -24,14 +24,17 @@ public class MainActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
       
-   
+        //Sets the application to run in full screen mode
         WindowManager.LayoutParams attrs = getWindow().getAttributes();
         attrs.flags |= WindowManager.LayoutParams.FLAG_FULLSCREEN;
         getWindow().setAttributes(attrs);
         
-        Button button1 = (Button) findViewById(R.id.Login);
+        //Creates variable from the Login button in the xml file
+        Button Login = (Button) findViewById(R.id.Login);
         
-        button1.setOnClickListener(new OnClickListener(){
+        //Creates an activity for when the Login button is clicked
+        //It opens the SelectActivity class
+        Login.setOnClickListener(new OnClickListener(){
         	
         public void onClick(View v){
         	Intent intent = new Intent (v.getContext(), SelectActivity.class);

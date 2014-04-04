@@ -40,30 +40,32 @@ public final class R {
         public static final int Login=0x7f09001a;
         public static final int Prescription=0x7f090018;
         public static final int Save=0x7f090017;
-        public static final int Send=0x7f090026;
-        public static final int action_settings=0x7f090027;
-        public static final int addRX=0x7f090000;
-        public static final int container=0x7f09001d;
-        public static final int drug=0x7f090006;
-        public static final int editText10=0x7f090015;
-        public static final int editText2=0x7f090004;
-        public static final int editText3=0x7f090009;
-        public static final int editText4=0x7f09000b;
-        public static final int editText5=0x7f090013;
-        public static final int editText6=0x7f09000d;
-        public static final int editText7=0x7f09000f;
-        public static final int editText8=0x7f090011;
+        public static final int Send=0x7f090028;
+        public static final int action_settings=0x7f090031;
+        public static final int addRX=0x7f090003;
+        public static final int cardDescription=0x7f090030;
+        public static final int cardFirstName=0x7f09002d;
+        public static final int cardLastName=0x7f09002e;
+        public static final int cardStatus=0x7f09002f;
+        public static final int container=0x7f09001f;
         public static final int editText9=0x7f090016;
-        public static final int editTextQuant=0x7f090023;
-        public static final int editTextRefill=0x7f090025;
-        public static final int editTxtInstruct=0x7f090021;
-        public static final int imageView1=0x7f090003;
-        public static final int listView1=0x7f090019;
-        public static final int seekBar1=0x7f09001f;
-        public static final int textView10=0x7f090002;
+        public static final int editTextQuant=0x7f090025;
+        public static final int editTextRefill=0x7f090027;
+        public static final int editTxtInstruct=0x7f090023;
+        public static final int imageView1=0x7f090002;
+        public static final int newPatient=0x7f090032;
+        public static final int patient_detail_container=0x7f09001d;
+        public static final int patient_list=0x7f09001e;
+        public static final int personDetailScrollView=0x7f090029;
+        public static final int person_list=0x7f090019;
+        public static final int seekBar1=0x7f090021;
+        public static final int textFirstName=0x7f09002a;
+        public static final int textLastName=0x7f09002b;
+        public static final int textReason=0x7f09002c;
+        public static final int textView10=0x7f090001;
         public static final int textView11=0x7f090007;
         public static final int textView13=0x7f090014;
-        public static final int textView2=0x7f090001;
+        public static final int textView2=0x7f090000;
         public static final int textView3=0x7f090005;
         public static final int textView4=0x7f09000e;
         public static final int textView5=0x7f090010;
@@ -71,23 +73,54 @@ public final class R {
         public static final int textView7=0x7f09000c;
         public static final int textView8=0x7f090008;
         public static final int textView9=0x7f09000a;
-        public static final int txtAmt=0x7f09001e;
-        public static final int txtInstruction=0x7f090020;
-        public static final int txtQuant=0x7f090022;
-        public static final int txtRefill=0x7f090024;
+        public static final int txtAmt=0x7f090020;
+        public static final int txtBP=0x7f09000d;
+        public static final int txtDocAsses=0x7f090015;
+        public static final int txtFirstName=0x7f090004;
+        public static final int txtHeight=0x7f090009;
+        public static final int txtInstruction=0x7f090022;
+        public static final int txtLastName=0x7f090006;
+        public static final int txtPulse=0x7f090011;
+        public static final int txtQuant=0x7f090024;
+        public static final int txtReasonVisit=0x7f090013;
+        public static final int txtRefill=0x7f090026;
+        public static final int txtTemp=0x7f09000f;
+        public static final int txtWeight=0x7f09000b;
     }
     public static final class layout {
-        public static final int activity2=0x7f030000;
-        public static final int activity_edit=0x7f030001;
-        public static final int activity_load=0x7f030002;
-        public static final int activity_login=0x7f030003;
-        public static final int activity_main=0x7f030004;
-        public static final int activity_rx=0x7f030005;
+        public static final int activity_edit=0x7f030000;
+        public static final int activity_load_patient=0x7f030001;
+        public static final int activity_login=0x7f030002;
+        public static final int activity_main=0x7f030003;
+        public static final int activity_patient_detail=0x7f030004;
+        /** 
+    Layout alias to replace the single-pane version of the layout with a
+    two-pane version on Large screens.
+
+    For more on layout aliases, see:
+    http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
+    
+
+    Layout alias to replace the single-pane version of the layout with a
+    two-pane version on Large screens.
+
+    For more on layout aliases, see:
+    http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
+    
+         */
+        public static final int activity_patient_list=0x7f030005;
+        public static final int activity_patient_twopane=0x7f030006;
+        public static final int activity_rx=0x7f030007;
+        public static final int fragment_load_patient=0x7f030008;
+        public static final int fragment_patient_detail=0x7f030009;
+        public static final int fragment_patient_list=0x7f03000a;
+        public static final int patient_listitem=0x7f03000b;
     }
     public static final class menu {
         public static final int display_message=0x7f080000;
-        public static final int main=0x7f080001;
-        public static final int rx=0x7f080002;
+        public static final int list_activity=0x7f080001;
+        public static final int main=0x7f080002;
+        public static final int rx=0x7f080003;
     }
     public static final class raw {
         public static final int efh_logo=0x7f040000;
@@ -101,6 +134,8 @@ public final class R {
         public static final int hello_world=0x7f060002;
         public static final int title_activity_display_message=0x7f060005;
         public static final int title_activity_rx=0x7f060006;
+        public static final int title_patient_detail=0x7f060008;
+        public static final int title_patient_list=0x7f060007;
     }
     public static final class style {
         /** 

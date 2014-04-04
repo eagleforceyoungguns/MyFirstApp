@@ -34,6 +34,28 @@
             android:name="com.rich.myfirstapp.RxActivity"
             android:label="@string/title_activity_rx" >
         </activity>
+
+        <provider
+            android:name="com.rich.myfirstapp.database.PatientProvider"
+            android:authorities="com.rich.myfirstapp.provider"
+            android:enabled="true"
+            android:exported="false" >
+        </provider>
+
+        <activity android:name="com.rich.myfirstapp.PersonDetailActivity" >
+        </activity>
+        <activity
+            android:name="com.rich.myfirstapp.PatientListActivity"
+            android:label="@string/title_patient_list" >
+        </activity>
+        <activity
+            android:name="com.rich.myfirstapp.PatientDetailActivity"
+            android:label="@string/title_patient_detail"
+            android:parentActivityName="com.rich.myfirstapp.PatientListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rich.myfirstapp.PatientListActivity" />
+        </activity>
     </application>
 
 </manifest>

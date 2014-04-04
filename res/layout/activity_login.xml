@@ -36,7 +36,7 @@
             android:typeface="normal" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/txtFirstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView2"
@@ -47,11 +47,11 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/drug"
+            android:id="@+id/txtLastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView3"
-            android:layout_alignRight="@+id/editText2"
+            android:layout_alignRight="@+id/txtFirstName"
             android:layout_below="@+id/textView3"
             android:layout_marginTop="15dp"
             android:ems="10"
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignRight="@+id/textView2"
-            android:layout_below="@+id/editText2"
+            android:layout_below="@+id/txtFirstName"
             android:layout_marginTop="45dp"
             android:text="Password:"
             android:textAppearance="?android:attr/textAppearanceSmall"
@@ -86,8 +86,8 @@
             android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/drug"
-            android:layout_below="@+id/drug"
+            android:layout_alignRight="@+id/txtLastName"
+            android:layout_below="@+id/txtLastName"
             android:layout_marginTop="100dp"
             android:src="@drawable/efh_logo_no_bg" />
 
