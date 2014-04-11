@@ -29,8 +29,9 @@ public class SelectActivity extends Activity{
    
   //Creates click activity for the Add Patient button. It opens the EditPatient class
         public void onClick(View v){
-        	Intent intent = new Intent (v.getContext(), EditPatient.class);
+        	Intent intent = new Intent (v.getContext(), PatientDetailActivity.class);
         		startActivityForResult(intent, 0);
+        		
         }
         });
   //Creates click activity for the Load PAtient button. It opens the PatientListActivity class

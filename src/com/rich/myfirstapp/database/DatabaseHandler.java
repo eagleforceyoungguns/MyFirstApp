@@ -38,12 +38,22 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         
         patient.firstname = "Ryan";
         patient.lastname = "Clagett";
+        patient.height = "56";
+        patient.weight = "156";
+        patient.bp = "120/70";
+        patient.temp = "98.6";
+        patient.pulse = "120";
         patient.reason = "Sore throat";
         db.insert(Patient.TABLE_NAME, null, patient.getContent());
 
         patient.firstname = "Richard";
         patient.lastname = "Heil";
-        patient.reason = "Broken Arm";
+        patient.height = "56";
+        patient.weight = "156";
+        patient.bp = "120/70";
+        patient.temp = "98.6";
+        patient.pulse = "120";
+        patient.reason = "Sore throat";
         db.insert(Patient.TABLE_NAME, null, patient.getContent());
     }
 
@@ -56,7 +66,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         final SQLiteDatabase db = this.getReadableDatabase();
         final Cursor cursor = db.query(Patient.TABLE_NAME,
                 Patient.FIELDS, Patient.COL_ID + " IS ?",
-                new String[] { String.valueOf(id) }, null, null, null, null);
+                new String[] { String.valueOf(id) }, null, null, null);
         if (cursor == null || cursor.isAfterLast()) {
             return null;
         }

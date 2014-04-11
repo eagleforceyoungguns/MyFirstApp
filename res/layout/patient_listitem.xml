@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
-        android:textColor="#ff707070"
+        
         android:textSize="23sp" />
 
     <TextView
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
-        android:textColor="#ff707070"
+        
         android:textSize="23sp" />
 
     <View
@@ -46,7 +46,7 @@
         android:maxLines="3"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
-        android:textColor="#ff8d8d8d"
+        
         android:textSize="16sp" />
 
 </LinearLayout>

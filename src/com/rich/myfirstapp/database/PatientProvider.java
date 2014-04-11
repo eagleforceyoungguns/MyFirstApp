@@ -15,7 +15,7 @@ public class PatientProvider extends ContentProvider {
 
     // URIs
     // Used for all patients
-    public static final String PATIENTS = SCHEME + AUTHORITY + "/person";
+    public static final String PATIENTS = SCHEME + AUTHORITY + "/" + Patient.TABLE_NAME;
     public static final Uri URI_PATIENTS = Uri.parse(PATIENTS);
     // Used for a single patients, just add the id to the end
     public static final String PATIENT_BASE = PATIENTS + "/";

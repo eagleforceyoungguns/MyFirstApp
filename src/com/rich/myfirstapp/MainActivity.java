@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 
@@ -37,8 +38,9 @@ public class MainActivity extends Activity{
         Login.setOnClickListener(new OnClickListener(){
         	
         public void onClick(View v){
-        	Intent intent = new Intent (v.getContext(), SelectActivity.class);
+        	Intent intent = new Intent (v.getContext(), PatientListActivity.class);
         		startActivityForResult(intent, 0);
+        		Toast.makeText(MainActivity.this, "Hello Doctor, loading your patient list now", Toast.LENGTH_LONG).show();
         }
         });
         

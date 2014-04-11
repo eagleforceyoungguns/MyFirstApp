@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.WindowManager;
 
 /**
  * An activity representing a list of Patients. This activity has different
@@ -39,6 +40,11 @@ public class PatientListActivity extends FragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_patient_list);
+		
+		//Sets the application to run in full screen mode
+        WindowManager.LayoutParams attrs = getWindow().getAttributes();
+        attrs.flags |= WindowManager.LayoutParams.FLAG_FULLSCREEN;
+        getWindow().setAttributes(attrs);
 
 		if (findViewById(R.id.patient_detail_container) != null) {
 			// The detail container view will be present only in the
@@ -64,7 +70,7 @@ public class PatientListActivity extends FragmentActivity implements
 	
 	 @Override
 	    public void onItemSelected(long id) {
-	        if (mTwoPane) {
+	        /*if (mTwoPane) {
 	            // In two-pane mode, show the detail view in this activity by
 	            // adding or replacing the detail fragment using a
 	            // fragment transaction.
@@ -76,13 +82,13 @@ public class PatientListActivity extends FragmentActivity implements
 	                    .replace(R.id.patient_detail_container, fragment)
 	                    .commit();
 
-	        } else {
+	        } else {*/
 	            // In single-pane mode, simply start the detail activity
 	            // for the selected item ID.
 	            Intent detailIntent = new Intent(this, PatientDetailActivity.class);
 	            detailIntent.putExtra(PatientDetailFragment.ARG_ITEM_ID, id);
 	            startActivity(detailIntent);
-	        }
+	        //}
 	    
 	}
 	@Override

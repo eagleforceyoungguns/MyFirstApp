@@ -11,9 +11,12 @@ import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
 
 import com.rich.myfirstapp.database.Patient;
 import com.rich.myfirstapp.database.PatientProvider;
@@ -83,12 +86,11 @@ public class PatientListFragment extends ListFragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		// TODO: replace with a real list adapter.
 		setListAdapter(new SimpleCursorAdapter(getActivity(),
                 R.layout.patient_listitem, null, new String[] {
-                        Patient.COL_FIRSTNAME, Patient.COL_LASTNAME,
-                        Patient.COL_REASON }, new int[] { R.id.cardFirstName,
-                        R.id.cardLastName, R.id.cardDescription }, 0));
+                        Patient.COL_FIRSTNAME, Patient.COL_LASTNAME
+                        }, new int[] { R.id.cardFirstName,
+                        R.id.cardLastName}, 0));
 
         // Load the content
         getLoaderManager().initLoader(0, null, new LoaderCallbacks<Cursor>() {
@@ -109,6 +111,11 @@ public class PatientListFragment extends ListFragment {
                 ((SimpleCursorAdapter) getListAdapter()).swapCursor(null);
             }
         });
+	}
+	
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		return inflater.inflate(R.layout.fragment_patient_list, null);
 	}
 
 	@Override
@@ -145,13 +152,13 @@ public class PatientListFragment extends ListFragment {
 	}
 
 	 @Override
-	    public void onListItemClick(ListView listView, View view, int position,
-	            long id) {
-	        super.onListItemClick(listView, view, position, id);
+	public void onListItemClick(ListView listView, View view, int position,
+	      long id) {
+	  super.onListItemClick(listView, view, position, id);
 
-	        // Notify the active callbacks interface (the activity, if the
-	        // fragment is attached to one) that an item has been selected.
-	        mCallbacks.onItemSelected(getListAdapter().getItemId(position));
+	   // Notify the active callbacks interface (the activity, if the
+	   // fragment is attached to one) that an item has been selected.
+	   mCallbacks.onItemSelected(getListAdapter().getItemId(position));
 	    }
 
 	@Override
